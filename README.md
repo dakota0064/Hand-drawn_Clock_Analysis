@@ -1,5 +1,8 @@
 How to use this pipeline to process and evaluate hand-drawn clock images:
 
+Create a directory called "data" and unzip the contents of sample_data.zip into it.
+Run the scripts in order, starting from 1.0. Take note of the details listed below.
+
 **0.0_extract_clocks_from_MoCA.py**
   
 This script exists because our original dataset consisted of PDF files created from scanned paper copies of MoCA evaluations. The script reads the PDFs, locates the page with the clock drawing, isolates the clock, crops out the desired section and saves the new image using the same unique identifier as the PDF. This process was very sensitive even on our original scans (about ~5% failure rate), and will likely only serve as an assitive tool for new datasets. Expect to have to do manual cropping to prepare clock images for best results.
