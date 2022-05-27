@@ -1,5 +1,7 @@
 How to use this pipeline to process and evaluate hand-drawn clock images:
 
+Install the necessary requirements using the following command - "pip install -r requirements.txt"
+
 Create a directory called "data" and unzip the contents of sample_data.zip into it.
 Run the scripts/notebooks in order, starting from 1.0. Scripts can be run with no parameters - any changes, such as data/directory structures, need to be done within the files themselves. Take note of the details listed below.
 
