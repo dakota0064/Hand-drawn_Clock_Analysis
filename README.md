@@ -1,4 +1,4 @@
-How to use this pipeline to process and evaluate hand-drawn clock images:
+***How to use this pipeline to process and evaluate hand-drawn clock images:***
 
 Install the necessary requirements using the following command - "pip install -r requirements.txt"
 
