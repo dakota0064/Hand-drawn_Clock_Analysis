@@ -34,8 +34,8 @@ from dateutil.parser import parse
 # -------------------------------------------------------------------------------------------------------------------- #
 # Change these strings to the desired source and destination directories/files
 
-meta_filename = "data/clock_16000_labels.csv"
-base_directory = "data/cropped_images"
+meta_filename = "data/sample_metadata.csv"
+base_directory = "data/sample_images"
 
 save_filename = "data/feature_data.csv"
 save_directory = "data/annotated_images/"
@@ -575,54 +575,54 @@ if __name__ == '__main__':
     df = pd.read_csv(meta_filename)
 
     images = []
-    df['found'] = 0
-    df["filename"] = ""
+    # df['found'] = 0
+    # df["filename"] = ""
 
 # This section relies on specific date/image encodings to match images with specific rows in the data file.
 # This will need to be tweaked depending on the format of your image names/IDs and meta data
 # If you have a one-to-one correspondence between image IDs/names and rows this shouldn't be necessary.
 # -------------------------------------------------------------------------------------------------------------------- #
-    # Fill in date column with desired values
-    base_date = date(1960, 1, 1)
-    df["date"] = None
-    for i in range(len(df)):
-        df.iloc[i, df.columns.get_loc('date')] = base_date + timedelta(int(df.iloc[i]["visdt"]))
-
-    # Loop through and mark out which rows we actually have images for
-    for filename in os.listdir(base_directory):
-        names = filename.split(" ")
-        try:
-            if "n.d" in names[-1]:
-                continue
-            new_names = []
-            for name in names:
-                if "V" in name or "v" in name or name == ".jpg":
-                    continue
-                else:
-                    new_names.append(name)
-
-            names = new_names
-            date_string = names[-1]
-            if ".jpg" in date_string:
-                date_string = date_string[:-4]
-            evaluation_date = parse(date_string).date()
-            conditions = [df['mrn'].eq(names[0]) & df['date'].eq(evaluation_date)]
-            choices = [1]
-            df['found'] = np.select(conditions, choices, default=df['found'])
-
-            # Load the images if we have a row for it
-            if np.where(df['mrn'].eq(names[0]) & df['date'].eq(evaluation_date), True, False).any():
-                df['filename'] = np.select(conditions, [filename], default=df['filename'])
-        except:
-            if len(names) > 0:
-                print(names[-1])
-            else:
-                print(0)
-
-
-    df = df[df["found"] == 1]
-    df = df.drop(columns=["found", 'visdt'])
-    df = df.reset_index()
+#     # Fill in date column with desired values
+#     base_date = date(1960, 1, 1)
+#     df["date"] = None
+#     for i in range(len(df)):
+#         df.iloc[i, df.columns.get_loc('date')] = base_date + timedelta(int(df.iloc[i]["visdt"]))
+#
+#     # Loop through and mark out which rows we actually have images for
+#     for filename in os.listdir(base_directory):
+#         names = filename.split(" ")
+#         try:
+#             if "n.d" in names[-1]:
+#                 continue
+#             new_names = []
+#             for name in names:
+#                 if "V" in name or "v" in name or name == ".jpg":
+#                     continue
+#                 else:
+#                     new_names.append(name)
+#
+#             names = new_names
+#             date_string = names[-1]
+#             if ".jpg" in date_string:
+#                 date_string = date_string[:-4]
+#             evaluation_date = parse(date_string).date()
+#             conditions = [df['mrn'].eq(names[0]) & df['date'].eq(evaluation_date)]
+#             choices = [1]
+#             df['found'] = np.select(conditions, choices, default=df['found'])
+#
+#             # Load the images if we have a row for it
+#             if np.where(df['mrn'].eq(names[0]) & df['date'].eq(evaluation_date), True, False).any():
+#                 df['filename'] = np.select(conditions, [filename], default=df['filename'])
+#         except:
+#             if len(names) > 0:
+#                 print(names[-1])
+#             else:
+#                 print(0)
+#
+#
+#     df = df[df["found"] == 1]
+#     df = df.drop(columns=["found", 'visdt'])
+#     df = df.reset_index()
 
 # -------------------------------------------------------------------------------------------------------------------- #
 
