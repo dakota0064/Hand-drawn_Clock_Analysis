@@ -1,0 +1,45 @@
+Color code:
+	Red = contour, contour center point
+	Yellow = minimum bounding circle, minimum bounding circle center point
+	
+	Magenta = connected components comprising hands
+	Purple = intersection of hands
+	
+	Green = bounding boxes for digits, digit labels
+
+
+
+Contour Features:
+	Center Point - used for other features
+	Radius of minimum bounding circle - used for other features
+	
+	Circularity of contour (as measured by 4*pi*area / (arc length^2 ))
+	Removed Points - number of removed concavities if Douglas-Peucker contour was used
+	Center Deviation - distance between the center of the contour and the center of the minimum bounding circle.
+	
+	
+Hands Features:
+	Distance of hands intersection from center (almost all other hands features rely on intersect point being accurate)
+	Angle between hands - self explanatory
+	Point Density Ratio - ratio of the number of points comprising each hand (small/big)
+	Length Ratio - ratio of the length of each hand (small/big)
+	Bounding Box Ratio - ratio of the sides of the bounding box needed to cover the full hands structure
+	Number of Components - the number of separate connected components determined to comprise the hands
+	
+	
+Digit Features:
+	Digit Radius Mean - the average distance of each recognized digit from the contour center
+	Digit Radius Std - the standard deviation of the distances from the contour center
+	Digit Angle Mean - the average separating angle between digits
+	Digit Angle Std - the standard deviation of the separating angles
+	Digit Area Mean - the average area of the digit bounding boxes
+	Digit Area Std - the standard deviation of the areas of the bounding boxes
+	Missing Digits - how many digits are missing from the expected distribution of a correct clock?
+	Extra Digits - how many extra digits are present over the expected distribution?
+	
+Summary Statistics
+	Leftover Ink - How much of the original ink is unaccounted for by any of the previous methods?
+	
+
+	
+	
