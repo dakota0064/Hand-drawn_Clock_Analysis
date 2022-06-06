@@ -1,11 +1,21 @@
 ***How to use this pipeline to process and evaluate hand-drawn clock images:***
 
-Install the necessary requirements using the following command - "pip install -r requirements.txt"
+*Step 1:* Install Python and pip
+Download page - https://www.python.org/downloads/
+Installation tutorial - https://docs.python-guide.org/starting/installation/
 
-Create a directory called "data" and unzip the contents of sample_data.zip into it.
+*Step 2:* Download this repository and unzip to wherever you want the scripts/data to live. Make sure to maintain the existing directory structure so that the data/results are saved to the right locations and the utils scripts import properly.
 
-Run the scripts/notebooks in order, starting from 1.0. Scripts can be run with no parameters - any changes, such as data/directory structures, need to be done within the files themselves. Take note of the details listed below, especially regarding 2.0 and feature normalization.
+*Step 3:* Using the command line, cd into the newly unzipped Hand-drawn_Clock_Analysis directory and install the necessary requirements using the following command:
+pip install -r requirements.txt
 
+*Step 4:* Within the Hand-drawn_Clock_Analysis directory create a new directory called "data" and unzip the contents of sample_data.zip into it.
+
+*Step 5:* Run the scripts/notebooks in order, starting from 1.0. Scripts can be run with no parameters - i.e. using a command such as: 
+python 1.0_compute_clock_features.py 
+Any changes, such as to desired data/directory structures, need to be done within the files themselves. Take note of the details listed below, especially regarding 2.0 and feature normalization.
+
+***Pipeline Script Descriptions***
 **0.0_extract_clocks_from_MoCA.py**
   
 This script exists because our original dataset consisted of PDF files created from scanned paper copies of MoCA evaluations. The script reads the PDFs, locates the page with the clock drawing, isolates the clock, crops out the desired section and saves the new image using the same unique identifier as the PDF. This process was very sensitive even on our original scans (about ~5% failure rate), and will likely only serve as an assitive tool for new datasets. Expect to have to do manual cropping to prepare clock images for best results.
