@@ -12,7 +12,7 @@ You can also choose to install Python using Anaconda, a dedicated Python package
 - After creating and activating a new environment you will need to install pip within that environment:
   - ```conda install pip``` 
 
-Note that installing and setting up a python environment is often the toughest part for new users. The listed tutorials might not be the best fit depending on your system and level of experience, so googling alternatives is recommended if this proves to be an issue.
+Note that installing and setting up a python environment is often the toughest part for new (and often experienced) users. The listed tutorials might not be the best fit depending on your system and level of experience, so googling alternatives is recommended if this proves to be an issue.
 
 ## Step 2
 Download this repository and unzip to wherever you want this tool and its marked-up images and results to live. Make sure to maintain the existing directory structure so that the data/results are saved to the right locations and the utils scripts import properly.
@@ -43,7 +43,7 @@ Whereas notebook files (ending with the extension .ipynb) should be opened using
   - ```jupyter notebook```
 This should open a new window in your browser. From here navigate to the desired notebook file and double-click to open. You can run all cells by clicking the 'Kernel' tab and choosing 'Restart and Run All'.
 
-Any changes, such as to desired data/directory structures, need to be done within the files themselves. This can be done with any basic text editor or a dedicated Python IDE such as PyCharm. The parts most likely to require changing are sequestered at the beginning of each file. 
+Any changes, such as to desired data/directory structures, need to be made within the files themselves. This can be done with any basic text editor or a dedicated Python IDE such as PyCharm. The parts most likely to require changing are marked at the beginning of each file. 
 
 Take note of the details listed below, especially regarding 2.0 and feature normalization.
 
