@@ -1,18 +1,23 @@
 ***How to use this pipeline to process and evaluate hand-drawn clock images:***
 
 *Step 1:* Install Python and pip
+
 Download page - https://www.python.org/downloads/
+
 Installation tutorial - https://docs.python-guide.org/starting/installation/
 
 *Step 2:* Download this repository and unzip to wherever you want the scripts/data to live. Make sure to maintain the existing directory structure so that the data/results are saved to the right locations and the utils scripts import properly.
 
 *Step 3:* Using the command line, cd into the newly unzipped Hand-drawn_Clock_Analysis directory and install the necessary requirements using the following command:
+
 pip install -r requirements.txt
 
 *Step 4:* Within the Hand-drawn_Clock_Analysis directory create a new directory called "data" and unzip the contents of sample_data.zip into it.
 
 *Step 5:* Run the scripts/notebooks in order, starting from 1.0. Scripts can be run with no parameters - i.e. using a command such as: 
+
 python 1.0_compute_clock_features.py 
+
 Any changes, such as to desired data/directory structures, need to be done within the files themselves. Take note of the details listed below, especially regarding 2.0 and feature normalization.
 
 ***Pipeline Script Descriptions***
