@@ -15,7 +15,7 @@ You can also choose to install Python using Anaconda, a dedicated Python package
 Note that installing and setting up a python environment is often the toughest part for new users. The listed tutorials might not be the best fit depending on your system and level of experience, so googling alternatives is recommended if this proves to be an issue.
 
 ## Step 2
-Download this repository and unzip to wherever you want the scripts/data to live. Make sure to maintain the existing directory structure so that the data/results are saved to the right locations and the utils scripts import properly.
+Download this repository and unzip to wherever you want this tool and its marked-up images and results to live. Make sure to maintain the existing directory structure so that the data/results are saved to the right locations and the utils scripts import properly.
 
 ## Step 3
 Using the command line, cd into the newly unzipped Hand-drawn_Clock_Analysis directory and install the necessary requirements using the following command:
