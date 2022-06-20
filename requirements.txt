@@ -5,12 +5,10 @@ jupyter-client==6.1.12
 jupyter-core==4.7.1
 jupyterlab-pygments==0.1.2
 Keras==2.4.3
-keras-nightly==2.5.0.dev2021032900
 Keras-Preprocessing==1.1.2
 matplotlib==3.4.1
 notebook==6.3.0
 numpy==1.19.5
-opencv-contrib-python==3.4.2.17
 opencv-python==4.5.2.54
 pandas==1.2.4
 Pillow==7.2.0
@@ -22,6 +20,3 @@ seaborn==0.11.1
 six==1.15.0
 tensorflow==2.5.0
 tensorflow-datasets==4.3.0
-tensorflow-estimator==2.5.0
-tensorflow-gpu==2.4.1
-tensorflow-metadata==1.0.0
